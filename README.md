@@ -13,3 +13,8 @@ git checkout my-branch
 docker run -ti -d -v `pwd`/certs:/cockroach/certs --name cockroach \
   --entrypoint=/bin/bash cockroachdb/cockroach
 ```
+
+## Connect to cockroachdb with certificate
+```bash
+./cockroach sql --certs-dir=certs/ --host <hostname> -d <database>
+```
