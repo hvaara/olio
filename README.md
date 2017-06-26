@@ -10,5 +10,6 @@ git checkout my-branch
 
 ## Set up cockroachdb docker container with certs mounted
 ```bash
-docker run -ti -d -v `pwd`/roach:/cockroach/certs --name cockroach --entrypoint=/bin/bash cockroachdb/cockroach
+docker run -ti -d -v `pwd`/certs:/cockroach/certs --name cockroach \
+  --entrypoint=/bin/bash cockroachdb/cockroach
 ```
