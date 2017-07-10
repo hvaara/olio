@@ -19,3 +19,8 @@ docker run -ti -d -v `pwd`/certs:/cockroach/certs --name cockroach \
 ```bash
 ./cockroach sql --certs-dir=certs/ --host ${HOSTNAME} -d ${DATABASE}
 ```
+
+## Connect to cockroachdb with the postgres native client using a certificate
+```bash
+psql "port=26257 host=<host> user=<user> sslcert=./certs/client.<user>.crt sslkey=./certs/client.<user>.key sslrootcert=./certs/ca.crt sslmode=verify-ca" <database>
+```
