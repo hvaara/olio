@@ -24,3 +24,6 @@ docker run -ti -d -v `pwd`/certs:/cockroach/certs --name cockroach \
 ```bash
 psql "port=26257 host=${HOSTNAME} user=${USERNAME} sslcert=./certs/client.${USERNAME}.crt sslkey=./certs/client.${USERNAME}.key sslrootcert=./certs/ca.crt sslmode=verify-ca" ${DATABASE}
 ```
+
+# Links to more cheats
+- [kubectl cheatsheet](https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/)
