@@ -25,5 +25,33 @@ docker run -ti -d -v `pwd`/certs:/cockroach/certs --name cockroach \
 psql "port=26257 host=${HOSTNAME} user=${USERNAME} sslcert=./certs/client.${USERNAME}.crt sslkey=./certs/client.${USERNAME}.key sslrootcert=./certs/ca.crt sslmode=verify-ca" ${DATABASE}
 ```
 
+## postgres
+
+### List/show databases
+```
+\l
+```
+
+### create database
+```
+create database ${DATABASE_NAME}
+```
+
+### Create user
+```
+CREATE ROLE ${USERNAME} WITH LOGIN PASSWORD '${PASSWORD}'
+```
+
+### Grant privileges to user on a specific database
+```
+GRANT ALL PRIVILEGES ON DATABASE ${DATABASE} TO ${USERNAME};
+```
+
+### Connect/use database
+```
+\connect ${DATABASE}
+```
+
+
 # Links to more cheats
 - [kubectl cheatsheet](https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/)
